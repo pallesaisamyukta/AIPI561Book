@@ -1,0 +1,7 @@
+Flask==2.2.5
+Flask-Cors==4.0.1
+transformers==4.30.2
+torch==1.13.1
+PyPDF2==3.0.1
+openai==1.35.3
+regex==2024.4.16

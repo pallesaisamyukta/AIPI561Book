@@ -1,0 +1,205 @@
+/* General App Styling */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+}
+
+
+/* Header Component Styling */
+.header {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  color: white;
+  padding: 20px;
+}
+
+.header--image {
+  height: 100%;
+  margin-right: 6px;
+}
+
+.header--title {
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+
+.header--project {
+  display: flex;
+  align-items: center; /* Vertically center the text */
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* BookSearch Component Styling */
+/* Container for the search input and button */
+.search-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-top: 20px; 
+  margin-left: 30px;
+  width: 95%; /* Full width of the screen */
+  height: 100px;
+}
+
+.search-container input {
+  flex: 1; /* Grow to fill available space */
+  margin-right: 10px; /* Space between input and button */
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  height: 60px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #672280;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 60px;
+}
+
+.search-container button:hover {
+  background-color: #A626D3;
+}
+
+/* Styling for the results container */
+.results-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  justify-content: center; /* Center the items */
+  margin-top: 50px;
+}
+
+/* Styling for each book card */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+  width: 2000px; /* Adjust width as needed */
+}
+
+.book-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.book-details {
+  flex: 1;
+}
+
+.book-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover; /* Ensure the image covers the space */
+  margin-left: 10px; /* Add space between details and image */
+}
+
+.book-details h4 {
+  margin: 0;
+}
+
+.book-details p {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.results-heading {
+  color: #A626D3;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+/* SummaryDisplay Component Styling */
+.summary-display {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-display h2 {
+  margin-top: 0;
+}
+
+.summary-display div {
+  margin-bottom: 20px;
+}
+
+.summary-display button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.summary-display button:hover {
+  background-color: #555;
+}
+
+/* History Component Styling */
+.history {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.history h2 {
+  margin-top: 0;
+}
+
+.history ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history ul li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.history ul li:last-child {
+  border-bottom: none;
+}
+
+/* LoadingIndicator Component Styling */
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading-indicator p {
+  margin: 0;
+  font-size: 18px;
+}
