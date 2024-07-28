@@ -5,3 +5,4 @@ torch==1.13.1
 PyPDF2==3.0.1
 openai==1.35.3
 regex==2024.4.16
+pytest
