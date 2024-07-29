@@ -7,5 +7,5 @@ import App from './App';
 test('renders Book Summarizer header', () => {
   render(<App />);
   const headerElement = screen.getByText(/Book Summarizer/i);
-  expect(headerElement).toBeInTheDocument();
+  expect(headerElement).not.toBeNull();
 });
