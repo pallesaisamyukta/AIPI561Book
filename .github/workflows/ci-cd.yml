@@ -42,9 +42,9 @@ jobs:
     - name: Run frontend tests
       run: |
         cd frontend
-        npm test -- --passWithNoTests
+        npm test -- --passWithNoTests || (cat /home/runner/.npm/_logs/*.log && exit 1)
 
     - name: Build frontend
       run: |
         cd frontend
-        npm run build
+        npm run build || (cat /home/runner/.npm/_logs/*.log && exit 1)
