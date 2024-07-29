@@ -27,12 +27,12 @@ jobs:
     - name: Run backend tests
       run: |
         cd backend
-        pytest
+        pytest || (cat /home/runner/work/AIPI561Book/AIPI561Book/backend/*.log && exit 1)
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '12.22.9'
+        node-version: '16'  # Updated Node.js version
 
     - name: Install frontend dependencies
       run: |
