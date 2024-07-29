@@ -32,7 +32,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Updated Node.js version
+        node-version: '12.22.9'  # Updated Node.js version
 
     - name: Install frontend dependencies
       run: |
