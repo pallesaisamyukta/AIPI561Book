@@ -47,4 +47,4 @@ jobs:
     - name: Build frontend
       run: |
         cd frontend
-        npm run build || (cat /home/runner/.npm/_logs/*.log && exit 1)
+        npm run build --verbose
