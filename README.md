@@ -2,29 +2,29 @@
 #### Overview
 Book Summarizer is a web application that allows users to search for the summary of preceding books.
 
-Features
-Search for books by title.
-View detailed summaries of selected books.
-Modern, responsive design built with React.
-Getting Started
+#### Features
+1. Search for books by title.
+2. View detailed summaries of preceding books.
+3. Modern, responsive design built with React.
+
+#### Getting Started
 You can quickly set up and deploy the project using the provided CI/CD pipeline and Docker configurations.
 
-Prerequisites
-Docker: Install Docker
-Docker Compose: Install Docker Compose
-Running Locally with Docker
+**Prerequisites**
+1. Install Docker
+2. Install Docker Compose
+   
+**Running Locally with Docker**
 Clone the Repository
-
 ```
-git clone [https://github.com/your-username/AIPI561Book.git](https://github.com/pallesaisamyukta/AIPI561Book.git)
+git clone https://github.com/pallesaisamyukta/AIPI561Book.git
 cd AIPI561Book
+```
 Build and Run with Docker Compose
 ```
-
-bash
-Copy code
 docker-compose up --build
-This command will build the Docker images and start the containers for both the frontend and backend (if applicable). The application will be accessible at http://localhost:3000.
+```
+This command will build the Docker images and start the containers for both the frontend and backend. The application will be accessible at http://localhost:3000.
 
 
 #### File Structure
