@@ -16,7 +16,7 @@ Running Locally with Docker
 Clone the Repository
 
 ```
-git clone https://github.com/your-username/AIPI561Book.git
+git clone [https://github.com/your-username/AIPI561Book.git](https://github.com/pallesaisamyukta/AIPI561Book.git)
 cd AIPI561Book
 Build and Run with Docker Compose
 ```
