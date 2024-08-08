@@ -19,7 +19,7 @@ Book Summarizer is a web application that allows users to search for and view su
 Watch the final demo video [here](https://link-to-your-demo-video.com).
 
 ## Architecture Diagram
-![Architecture Diagram](./path/to/architecture-diagram.png)
+![Architecture Diagram](architecture-diagram.png)
 
 ## Getting Started
 
