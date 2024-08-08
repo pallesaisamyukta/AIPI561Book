@@ -113,9 +113,21 @@ class Summarizer:
         total_length = len(pdf_text)
         present_summary = self.text_summarizer_batch(pdf_text)
         print("First BART Summarization")
-        while len(present_summary) > total_length/5:
-            present_summary = self.text_summarizer_batch(present_summary, max_chunk_size = 800)
+
+        max_iterations = 5  # Limit the number of iterations
+        iteration = 0
+        previous_length = len(present_summary)
+        
+        while len(present_summary) > total_length / 5 and iteration < max_iterations:
+            present_summary = self.text_summarizer_batch(present_summary, max_chunk_size=800)
             print("Second BART Summarization")
+            
+            # Break if the length does not change significantly
+            if abs(len(present_summary) - previous_length) < 100:  # Threshold can be adjusted
+                break
+            
+            previous_length = len(present_summary)
+            iteration += 1
         
         # Using ThreadPoolExecutor for OpenAI interactions
         step = 9000
