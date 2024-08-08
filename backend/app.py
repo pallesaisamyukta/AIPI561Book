@@ -23,8 +23,19 @@ def summarize():
     """
     print("Received request at /summarize endpoint")
     data = request.get_json()
-    pdf_path = data.get('pdf_path')
+
+    # Validate input
+    if not data or 'pdf_path' not in data:
+        print("Invalid input: No pdf_path provided")
+        return jsonify({'error': 'No pdf_path provided in request'}), 400
+
+    pdf_path = data['pdf_path']
     print(f"Received request to summarize PDF: {pdf_path}")
+
+    # Check if the file exists
+    if not os.path.isfile(pdf_path):
+        print(f"File not found: {pdf_path}")
+        return jsonify({'error': 'PDF file not found'}), 404
 
     try:
         summarizer = Summarizer()
@@ -34,6 +45,7 @@ def summarize():
     except Exception as e:
         print(f"Error during summarization: {e}")
         return jsonify({'error': str(e)}), 500
+
 
 # if __name__ == '__main__':
 #     app.run(debug=True, port=5050)
