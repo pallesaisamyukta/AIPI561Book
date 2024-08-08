@@ -116,3 +116,5 @@ Watch the final demo video [here](https://link-to-your-demo-video.com).
 
 4. **README.md**: Overview, setup instructions, and usage guidelines for the project.
 
+Also, I am exploring on how to perform the same using RUST. If interested please check - https://github.com/pallesaisamyukta/AIPI561BookRUST
+
