@@ -28,7 +28,7 @@ class FlaskAppTests(unittest.TestCase):
     def test_summarize_endpoint(self):
         # Test the /summarize endpoint with a mock PDF path
         pdf_path = os.path.join(os.path.dirname(__file__), 'sample.pdf')
-        response = self.app.post('/summarize', json={'pdf_path': 'sample.pdf'})
+        response = self.app.post('/summarize', json={'pdf_path': pdf_path})
         self.assertEqual(response.status_code, 200)
         # Check if the summary key exists in the response
         self.assertIn('summary', response.json)
