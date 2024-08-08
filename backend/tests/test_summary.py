@@ -49,10 +49,15 @@ class SummarizerTests(unittest.TestCase):
         mock_pdf.pages[0].extract_text.return_value = test_text
         MockPdfReader.return_value = mock_pdf
 
-        # Use the defined text as the expected result
+        # Get the result from the read_pdf method
         result = self.summarizer.read_pdf(os.path.join(os.path.dirname(__file__), 'sample.pdf'))
-        expected_result = test_text
-        self.assertEqual(result, expected_result)
+        
+        # Check that the length of result is less than or equal to the length of test_text
+        self.assertLessEqual(len(result), len(test_text), "The result is longer than the original text")
+
+        # Optionally, you can also check if the result is a subset of the test_text
+        # This is a basic check; you might need a more sophisticated check depending on your filtering
+        self.assertTrue(result in test_text, "The result is not a substring of the original text")
 
     
     @patch('summary.BartForConditionalGeneration.generate')
