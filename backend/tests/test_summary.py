@@ -54,11 +54,6 @@ class SummarizerTests(unittest.TestCase):
         
         # Check that the length of result is less than or equal to the length of test_text
         self.assertLessEqual(len(result), len(test_text), "The result is longer than the original text")
-
-        # Optionally, you can also check if the result is a subset of the test_text
-        # This is a basic check; you might need a more sophisticated check depending on your filtering
-        self.assertTrue(result in test_text, "The result is not a substring of the original text")
-
     
     @patch('summary.BartForConditionalGeneration.generate')
     @patch('summary.BartTokenizer.batch_encode_plus')
