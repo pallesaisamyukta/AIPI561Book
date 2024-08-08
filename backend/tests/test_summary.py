@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Ensure the app.py file can be found
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import unittest
 from unittest.mock import patch, MagicMock
 from ../summary import Summarizer
