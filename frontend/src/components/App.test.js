@@ -2,20 +2,19 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
-import { server, rest } from 'msw/node';
-import { setupServer } from 'msw/node';
+import { server as mswServer, rest } from 'msw/node';
 
 // Setup mock server and handlers
-const server = setupServer(
+const mockServer = mswServer(
   rest.post('http://localhost:5050/summarize', (req, res, ctx) => {
     return res(ctx.json({ summary: 'Mocked summary text' }));
   })
 );
 
 // Setup and teardown server for tests
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
+beforeAll(() => mockServer.listen());
+afterEach(() => mockServer.resetHandlers());
+afterAll(() => mockServer.close());
 
 test('renders App and fetches book summary', async () => {
   render(<App />);
@@ -36,7 +35,7 @@ test('renders App and fetches book summary', async () => {
 });
 
 test('handles API error gracefully', async () => {
-  server.use(
+  mockServer.use(
     rest.post('http://localhost:5050/summarize', (req, res, ctx) => {
       return res(ctx.status(500)); // Simulate an error
     })
