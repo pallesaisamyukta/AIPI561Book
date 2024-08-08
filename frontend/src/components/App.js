@@ -7,7 +7,6 @@ import './App.css';
 function App() {
   const [loading, setLoading] = useState(false);
   const [summaries, setSummaries] = useState({}); // State to store summaries
-  const [history, setHistory] = useState([]);
 
   const handleBookSelection = async (book) => {
     const pdfPath = `/home/ritik/Samyukta/local-project/src/books/${book.name}.pdf`;
@@ -39,9 +38,6 @@ function App() {
         [book.id]: data.summary
       }));
 
-      // Update history with the selected book
-      setHistory(prevHistory => [book, ...prevHistory]);
-      
     } catch (error) {
       console.error('Error fetching summary:', error);
     } finally {
