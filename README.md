@@ -1,104 +1,118 @@
-### Book Summarizer
-#### Overview
-Book Summarizer is a web application that allows users to search for the summary of preceding books.
+# Book Summarizer
 
-#### Features
+## Overview
+Book Summarizer is a web application that allows users to search for and view summaries of books. The application features a modern, responsive design built with React for the frontend and Flask for the backend. 
+
+## Features
 1. Search for books by title.
-2. View detailed summaries of preceding books.
+2. View detailed summaries of books.
 3. Modern, responsive design built with React.
 
-#### Getting Started
-You can quickly set up and deploy the project using the provided CI/CD pipeline and Docker configurations.
+## Requirements
+- Docker
+- Docker Compose
 
-**Prerequisites**
-1. Install Docker
-2. Install Docker Compose
-   
-**Running Locally with Docker**
-Clone the Repository
-```
-git clone https://github.com/pallesaisamyukta/AIPI561Book.git
-cd AIPI561Book
-```
-Build and Run with Docker Compose
-```
-docker-compose up --build
-```
-This command will build the Docker images and start the containers for both the frontend and backend. The application will be accessible at http://localhost:3000.
+## CI/CD Status
+![CI/CD Status](https://img.shields.io/github/workflow/status/<username>/<repo>/CI)
 
+## Final Demo Video
+Watch the final demo video [here](https://link-to-your-demo-video.com).
 
-#### File Structure
+## Architecture Diagram
+![Architecture Diagram](./path/to/architecture-diagram.png)
+
+## Getting Started
+
+### Running Locally with Docker
+1. **Clone the Repository**
+    ```bash
+    git clone https://github.com/pallesaisamyukta/AIPI561Book.git
+    cd AIPI561Book
+    ```
+
+2. **Build and Run with Docker Compose**
+    ```bash
+    docker-compose up --build
+    ```
+    This command will build the Docker images and start the containers for both the frontend and backend. The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+### Running Tests
+- **Frontend Tests**
+    ```bash
+    cd frontend
+    npm test
+    ```
+
+- **Backend Tests**
+    ```bash
+    cd backend
+    python -m unittest discover -s tests
+    ```
+
+### Performance and Evaluation
+- **Frontend Performance**: The React frontend is optimized for fast rendering and minimal loading times. Performance benchmarks can be found in the `frontend/performance` folder.
+- **Backend Performance**: The Flask backend is designed to handle multiple requests efficiently. Performance metrics are available in the `backend/performance` folder.
+
+## File Structure
 /AIPI561Book
 ├── backend/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── summary/
-│   │   ├── __init__.py
-│   │   ├── bart_summarizer.py
-│   │   ├── openai_summarizer.py
-│   └── tests/
-│       ├── __init__.py
-│       ├── test_summary.py
-│
+│ ├── app.py
+│ ├── requirements.txt
+│ summary.py
+│ app.py
+|
+│ └── tests/
+│ ├── init.py
+│ ├── test_summary.py
+│ ├── test_app.py
+|
 ├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── App.js
-│   │   │   ├── Header.js
-│   │   │   ├── Search.js
-│   │   ├── pages/
-│   │   │   ├── HomePage.js
-│   │   ├── App.test.js
-│   ├── package.json
-│   ├── Dockerfile
-│   └── docker-compose.yml
+│ ├── public/
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── App.js
+│ │ │ ├── Header.js
+│ │ │ ├── Search.js
+│ │ ├── pages/
+│ │ │ ├── HomePage.js
+│ │ ├── App.test.js
+│ ├── package.json
+│ ├── Dockerfile
+│ └── docker-compose.yml
 │
 ├── .github/
-│   └── workflows/
-│       └── ci_cd.yml
+│ └── workflows/
+│ └── ci_cd.yml
 └── README.md
 
-#### Major Folders and Files
-1. backend/
-The backend folder contains the server-side code for your application, primarily built with Flask and responsible for interacting with APIs and handling business logic.
 
-app.py: The main entry point for the Flask application. It initializes and configures the Flask app, sets up routes, and handles incoming requests.
+### Major Folders and Files
 
-requirements.txt: Lists the Python packages required to run the backend. This includes Flask, any libraries for connecting to the LLMs, and other dependencies.
+1. **backend/**
+   - `app.py`: Main entry point for the Flask application. Sets up routes and handles requests.
+   - `requirements.txt`: Lists required Python packages for the backend.
+   - `summary.py`: Contains the script for preprocessing i.e., reading the file, performing BART Summarizer & the OpenAI- LLamaFile for giving summary.
+   - `tests/`: Unit tests for the backend.
+     - `__init__.py`: Initializes the tests package.
+     - `test_summary.py`: Unit tests for summarization functions.
+     - `test_app.py`: Unit tests for Flask Application.
 
-summary/: Contains modules for summarization tasks.
+2. **frontend/**
+   - `public/`: Static assets and main HTML file for the React application.
+   - `src/`: Source code for the React application.
+     - `components/`: Reusable React components.
+       - `App.js`: Root component.
+       - `Header.js`: Application header.
+       - `Search.js`: Search functionality.
+     - `pages/`: Page components.
+       - `HomePage.js`: Home page component.
+     - `App.test.js`: Tests for `App.js`.
+   - `package.json`: Manages dependencies, scripts, and metadata.
+   - `Dockerfile`: Instructions for building the Docker image for the frontend.
+   - `docker-compose.yml`: Defines and runs multi-container Docker applications.
 
-__init__.py: Initializes the summary package.
-bart_summarizer.py: Contains functions or classes to perform summarization using the BART model.
-openai_summarizer.py: Contains functions or classes to perform summarization using OpenAI's LLM.
-tests/: Contains test files for the backend.
+3. **.github/**
+   - `workflows/ci_cd.yml`: CI/CD pipeline configuration for automated testing and deployment.
 
-__init__.py: Initializes the tests package.
-test_summary.py: Contains unit tests for the summarization functions in the summary module.
-2. frontend/
-The frontend folder contains the client-side code, typically built with React, and responsible for the user interface of the application.
+4. **README.md**: Overview, setup instructions, and usage guidelines for the project.
 
-public/: Contains static assets and the main HTML file (index.html) for the React application.
-
-src/: Contains the source code for the React application.
-
-components/: Contains reusable React components.
-App.js: The root component of your React app.
-Header.js: Component for the application header.
-Search.js: Component for the search functionality.
-pages/: Contains page components.
-HomePage.js: Component for the home page.
-App.test.js: Contains tests for the App.js component.
-package.json: Manages the dependencies, scripts, and metadata for the React project. It lists packages such as react, react-dom, and react-scripts.
-
-Dockerfile: Contains instructions for building a Docker image for the frontend application. It typically includes steps for installing dependencies and setting up the environment.
-
-docker-compose.yml: Defines and runs multi-container Docker applications. It specifies services, networks, and volumes for both frontend and backend, if needed.
-
-3. .github/
-The .github folder contains GitHub-specific configurations, including workflows for CI/CD.
-
-workflows/ci_cd.yml: Defines the CI/CD pipeline for the project. It automates processes such as checking out code, setting up environments, installing dependencies, running tests, and building the application.
-4. README.md
-The README.md file provides an overview of the project, including setup instructions, usage guidelines, and contribution information.
