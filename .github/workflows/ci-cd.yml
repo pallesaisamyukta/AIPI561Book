@@ -27,7 +27,7 @@ jobs:
     - name: Run backend tests
       run: |
         cd backend
-        pytest || (cat /home/runner/work/AIPI561Book/AIPI561Book/backend/*.log && exit 1)
+        pytest -v -s || (cat /home/runner/work/AIPI561Book/AIPI561Book/backend/*.log && exit 1)
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
