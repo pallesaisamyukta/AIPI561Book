@@ -16,7 +16,7 @@ Book Summarizer is a web application that allows users to search for and view su
 ![CI/CD Status](https://img.shields.io/github/workflow/status/<username>/<repo>/CI)
 
 ## Final Demo Video
-Watch the final demo video [here](https://link-to-your-demo-video.com).
+
 
 ## Architecture Diagram
 ![Architecture Diagram](architecture-diagram.png)
@@ -24,13 +24,23 @@ Watch the final demo video [here](https://link-to-your-demo-video.com).
 ## Getting Started
 
 ### Running Locally with Docker
-1. **Clone the Repository**
+1. **Download Llamafile**
+   https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile/resolve/main/Meta-Llama-3-8B-Instruct.Q5_K_M.llamafile?download=true - Meta-Llama-3-8B Instruct model
+2. If you're using macOS, Linux, or BSD, you'll need to grant permission for your computer to execute this new file. (You only need to do this once.)
+```
+chmod +x <llamafilename>.llamafile
+```
+3. Run the llamafile. e.g.:
+```
+./<llamafilename>.llamafile
+```
+4. **Clone the Repository**
     ```bash
     git clone https://github.com/pallesaisamyukta/AIPI561Book.git
     cd AIPI561Book
     ```
 
-2. **Build and Run with Docker Compose**
+5. **Build and Run with Docker Compose**
     ```bash
     docker-compose up --build
     ```
