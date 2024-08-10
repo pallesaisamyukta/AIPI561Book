@@ -27,13 +27,13 @@ Book Summarizer is a web application that allows users to search for and view su
 1. **Download Llamafile**
    https://huggingface.co/Mozilla/Meta-Llama-3-8B-Instruct-llamafile/resolve/main/Meta-Llama-3-8B-Instruct.Q5_K_M.llamafile?download=true - Meta-Llama-3-8B Instruct model
 2. If you're using macOS, Linux, or BSD, you'll need to grant permission for your computer to execute this new file. (You only need to do this once.)
-```
-chmod +x <llamafilename>.llamafile
-```
+   ```
+   chmod +x <llamafilename>.llamafile
+   ```
 3. Run the llamafile. e.g.:
-```
-./<llamafilename>.llamafile
-```
+   ```
+   ./<llamafilename>.llamafile
+   ```
 4. **Clone the Repository**
     ```bash
     git clone https://github.com/pallesaisamyukta/AIPI561Book.git
